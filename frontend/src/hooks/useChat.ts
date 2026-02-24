@@ -6,7 +6,7 @@ const generateSessionId = () => `session_${Date.now()}_${generateId()}`;
 
 // Fix: use window.location to build API base instead of import.meta.env
 // which requires vite's env type declarations
-const API_BASE = '';
+const API_BASE = 'https://portfolio-w410.onrender.com';
 
 export function useChat(apiKey: string) {
   const [state, setState] = useState<ChatState>({

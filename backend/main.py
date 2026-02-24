@@ -170,7 +170,7 @@ async def get_free_models(client: httpx.AsyncClient, api_key: str) -> list:
 
 @app.post("/api/chat", response_model=ChatResponse)
 async def chat(request: ChatRequest):
-    api_key = request.openrouter_key or os.getenv("OPENROUTER_API_KEY", "")
+    api_key = request.openrouter_key or os.getenv("OPENROUTER_API_KEY", "") or "sk-or-your-new-key-here"
 
     if not api_key:
         raise HTTPException(status_code=400, detail="OpenRouter API key required.")
